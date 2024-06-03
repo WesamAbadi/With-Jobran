@@ -11,18 +11,19 @@
 }
 
 .project:hover {
-	background: #fafafa;
+	background: #ebeaea;
 	opacity: 1;
 	transition: background-color 0.3s ease-in-out;
 }
 
 .project:hover .project-link {
-	color: var(--link-color);
+	color: lightcoral;
 	transition: color 0.3s ease-in-out;
 }
 
 .project-container {
 	padding: 30px;
+	color: black;
 }
 
 .project-logo {

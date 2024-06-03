@@ -1,40 +1,37 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 import NavBar from "../components/navBar";
 import Project from "./Project";
-import logo from "../images/product-image.png"; // with import
+import logo from "../images/product-image.png";
 
 import "../style/home.css";
-// import "./styles/homepage.css";
 
 const Homepage = () => {
   const INFO = {
     projects: [
       {
-        title: "Project 1",
+        title: "أهداءات صوتية",
         description:
-          "Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-        logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/javascript/javascript.png",
-        linkText: "View Project",
-        link: "https://github.com",
+          "إهداءات صوتية لمن تحب",
+        logo: "https://freepngtransparent.com/wp-content/uploads/2023/03/Microphone-Png-171.png",
+        linkText: "إطلب",
+        link: "/checkout",
       },
-
       {
-        title: "Project 2",
+        title: "أهداءات صوتية",
         description:
-          "Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-        logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/python/python.png",
-        linkText: "View Project",
-        link: "https://github.com",
+          "إهداءات صوتية لمن تحب",
+        logo: "https://freepngtransparent.com/wp-content/uploads/2023/03/Microphone-Png-171.png",
+        linkText: "إطلب",
+        link: "/checkout",
       },
-
       {
-        title: "Project 3",
+        title: "أهداءات صوتية",
         description:
-          "Lorem ipsum dolor sit amet. Et incidunt voluptatem ex tempore repellendus qui dicta nemo sit deleniti minima.",
-        logo: "https://cdn.jsdelivr.net/npm/programming-languages-logos/src/html/html.png",
-        linkText: "View Project",
-        link: "https://github.com",
+          "إهداءات صوتية لمن تحب",
+        logo: "https://freepngtransparent.com/wp-content/uploads/2023/03/Microphone-Png-171.png",
+        linkText: "إطلب",
+        link: "/checkout",
       },
     ],
   };
@@ -50,10 +47,8 @@ const Homepage = () => {
             <div className="homepage-first-area">
               <div className="homepage-first-area-left-side">
                 <div className="title homepage-title">
-                  Profesional Voice Over{" "}
+                  مع جبران
                 </div>
-
-                <div className="subtitle homepage-subtitle">desc </div>
               </div>
 
               <div className="homepage-first-area-right-side">

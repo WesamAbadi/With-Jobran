@@ -14,33 +14,26 @@ const NavBar = (props) => {
               <li
                 className={active === "home" ? "nav-item active" : "nav-item"}
               >
-                <Link to="/">Home</Link>
+                <Link to="/">الرئيسية</Link>
               </li>
               <li
                 className={active === "about" ? "nav-item active" : "nav-item"}
               >
-                <Link to="/about">About</Link>
+                <Link to="/about">من نحن</Link>
               </li>
               <li
                 className={
                   active === "projects" ? "nav-item active" : "nav-item"
                 }
               >
-                <Link to="/projects">Projects</Link>
-              </li>
-              <li
-                className={
-                  active === "articles" ? "nav-item active" : "nav-item"
-                }
-              >
-                <Link to="/articles">Articles</Link>
+                <Link to="/projects">خدمات</Link>
               </li>
               <li
                 className={
                   active === "contact" ? "nav-item active" : "nav-item"
                 }
               >
-                <Link to="/contact">Contact</Link>
+                <Link to="/contact">تواصل معنا</Link>
               </li>
             </ul>
           </div>
