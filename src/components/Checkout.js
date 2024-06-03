@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
-
 import CardIcon from "../images/credit-card.svg";
-import ProductImage from "../images/product-image.jpg";
+import ProductImage from "../images/product-image.png";
 
 import "../styles.css";
 
@@ -20,7 +19,7 @@ const Checkout = () => {
   const [stripeError, setStripeError] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const item = {
-    price: "price_1PNbyY2NzfYu6JEE7IXvPwdi",
+    price: "price_1PNcYe2NzfYu6JEESyJ3zgNW",
     quantity: 1,
   };
 
@@ -47,12 +46,12 @@ const Checkout = () => {
 
   return (
     <div className="checkout">
-      <h1>Stripe Checkout</h1>
-      <p className="checkout-title">Design+Code React Hooks Course</p>
+      <h1>Checkout</h1>
+      <p className="checkout-title">Voice Over Service</p>
       <p className="checkout-description">
-        Learn how to build a website with React Hooks
+        Get your new voice over today!
       </p>
-      <h1 className="checkout-price">$19</h1>
+      <h1 className="checkout-price">$9.90</h1>
       <img
         className="checkout-product-image"
         src={ProductImage}

@@ -52,6 +52,7 @@ code {
 
 .checkout-product-image {
   width: 400px;
+  border-radius: 10px;
 }
 
 .checkout-button {
