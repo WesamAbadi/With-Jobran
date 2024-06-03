@@ -20,8 +20,8 @@ const Checkout = () => {
   const [stripeError, setStripeError] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const item = {
-    price: "price_1K3TfMA4B8Maa00LFZ4EFwdX",
-    quantity: 1
+    price: "price_1PNbyY2NzfYu6JEE7IXvPwdi",
+    quantity: 1,
   };
 
   const checkoutOptions = {
