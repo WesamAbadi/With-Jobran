@@ -57,6 +57,7 @@ const handleSubmit = async (e) => {
       script,
       email,
       createdAt: serverTimestamp(),
+      paymentStatus: "initial/unknown",
     });
 
     // Redirect to Stripe checkout
@@ -111,7 +112,7 @@ const handleSubmit = async (e) => {
             </div>
           </div>
           <div className="text-container">
-            <p className="text">{isLoading ? "Loading..." : "Buy"}</p>
+            <p className="text">{isLoading ? "Loading..." : "Order"}</p>
           </div>
         </button>
       </form>
