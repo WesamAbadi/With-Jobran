@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
-import { db } from "../firebase"; // Assuming you have your Firebase configuration set up
+import { db } from "../utils/config";
 import CardIcon from "../images/credit-card.svg";
 import ProductImage from "../images/product-image.png";
 import "../styles.css";
@@ -42,36 +42,39 @@ const Checkout = () => {
     setLoading(false);
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (!script || !email) {
-      alert("Please provide a script and email");
-      return;
-    }
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  if (!script || !email) {
+    alert("Please provide a script and email");
+    return;
+  }
 
-    setLoading(true);
+  setLoading(true);
 
-    try {
-      const stripe = await getStripe();
-      const { error } = await stripe.redirectToCheckout(checkoutOptions);
-      if (error) {
-        setStripeError(error.message);
-      } else {
-        // Payment succeeded, store script and email in Firestore
-        await addDoc(collection(db, "voiceovers"), {
-          script,
-          email,
-          createdAt: serverTimestamp(),
-        });
-        alert("Payment and script submission successful!");
-      }
-    } catch (err) {
-      console.error("Error submitting script and email:", err);
-      alert("Error submitting script and email. Please try again.");
-    } finally {
-      setLoading(false);
+  try {
+    // Save script and email to Firebase
+    await addDoc(collection(db, "voiceovers"), {
+      script,
+      email,
+      createdAt: serverTimestamp(),
+    });
+
+    // Redirect to Stripe checkout
+    const stripe = await getStripe();
+    const { error } = await stripe.redirectToCheckout(checkoutOptions);
+    if (error) {
+      setStripeError(error.message);
+    } else {
+      alert("Payment and script submission successful!");
     }
-  };
+  } catch (err) {
+    console.error("Error submitting script and email:", err);
+    alert("Error submitting script and email. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   if (stripeError) alert(stripeError);
 
@@ -81,7 +84,11 @@ const Checkout = () => {
       <p className="checkout-title">Voice Over Service</p>
       <p className="checkout-description">Get your new voice over today!</p>
       <h1 className="checkout-price">$9.90</h1>
-      <img className="checkout-product-image" src={ProductImage} alt="Product" />
+      <img
+        className="checkout-product-image"
+        src={ProductImage}
+        alt="Product"
+      />
       <form onSubmit={handleSubmit}>
         <textarea
           value={script}
@@ -97,11 +104,7 @@ const Checkout = () => {
           placeholder="Enter your email..."
           style={{ width: "100%", marginBottom: "1rem" }}
         />
-        <button
-          className="checkout-button"
-          type="submit"
-          disabled={isLoading}
-        >
+        <button className="checkout-button" type="submit" disabled={isLoading}>
           <div className="grey-circle">
             <div className="purple-circle">
               <img className="icon" src={CardIcon} alt="credit-card-icon" />
