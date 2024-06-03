@@ -42,69 +42,74 @@ const Checkout = () => {
     setLoading(false);
   };
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (!script || !email) {
-    alert("Please provide a script and email");
-    return;
-  }
-
-  setLoading(true);
-
-  try {
-    // Save script and email to Firebase
-    await addDoc(collection(db, "voiceovers"), {
-      script,
-      email,
-      createdAt: serverTimestamp(),
-      paymentStatus: "initial/unknown",
-    });
-
-    // Redirect to Stripe checkout
-    const stripe = await getStripe();
-    const { error } = await stripe.redirectToCheckout(checkoutOptions);
-    if (error) {
-      setStripeError(error.message);
-    } else {
-      alert("Payment and script submission successful!");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!script || !email) {
+      alert("Please provide a script and email");
+      return;
     }
-  } catch (err) {
-    console.error("Error submitting script and email:", err);
-    alert("Error submitting script and email. Please try again.");
-  } finally {
-    setLoading(false);
-  }
-};
 
+    setLoading(true);
+
+    try {
+      // Save script and email to Firebase
+      await addDoc(collection(db, "voiceovers"), {
+        script,
+        email,
+        createdAt: serverTimestamp(),
+        paymentStatus: "initial/unknown",
+      });
+
+      // Redirect to Stripe checkout
+      const stripe = await getStripe();
+      const { error } = await stripe.redirectToCheckout(checkoutOptions);
+      if (error) {
+        setStripeError(error.message);
+      } else {
+        alert("Payment and script submission successful!");
+      }
+    } catch (err) {
+      console.error("Error submitting script and email:", err);
+      alert("Error submitting script and email. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   if (stripeError) alert(stripeError);
 
   return (
     <div className="checkout">
-      <h1>Checkout</h1>
-      <p className="checkout-title">Voice Over Service</p>
-      <p className="checkout-description">Get your new voice over today!</p>
-      <h1 className="checkout-price">$9.90</h1>
+      <p className="checkout-title">تعليق صوتي إحترافي</p>
+      <p className="checkout-description">إحصل على نصك الخاص</p>
+      <h1 className="checkout-price">$9.99</h1>
       <img
         className="checkout-product-image"
         src={ProductImage}
         alt="Product"
       />
       <form onSubmit={handleSubmit}>
-        <textarea
-          value={script}
-          onChange={(e) => setScript(e.target.value)}
-          placeholder="Enter your script here..."
-          rows={4}
-          style={{ width: "100%", marginBottom: "1rem" }}
-        />
+        <label htmlFor="email">
+          البريد الالكتروني (سيتم إرسال الملف الصوتى الى هذا العنوان)
+        </label>
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email..."
+          placeholder="البريد الالكتروني"
           style={{ width: "100%", marginBottom: "1rem" }}
         />
+        <label htmlFor="script">
+          ضع رابط النص أو أدخل النص الخاص بك كاملاً
+        </label>
+        <textarea
+          value={script}
+          onChange={(e) => setScript(e.target.value)}
+          placeholder=" ضع رابط النص أو أدخل النص الخاص بك كاملاً"
+          rows={4}
+          style={{ width: "100%", marginBottom: "1rem" }}
+        />
+
         <button className="checkout-button" type="submit" disabled={isLoading}>
           <div className="grey-circle">
             <div className="purple-circle">
@@ -112,7 +117,7 @@ const handleSubmit = async (e) => {
             </div>
           </div>
           <div className="text-container">
-            <p className="text">{isLoading ? "Loading..." : "Order"}</p>
+            <p className="text">{isLoading ? "Loading..." : "إلى الدفع"}</p>
           </div>
         </button>
       </form>

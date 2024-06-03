@@ -5,18 +5,73 @@ import Checkout from "./components/Checkout";
 import Home from "./components/Home";
 import Success from "./components/Success";
 import Cancel from "./components/Cancel";
+import NavBar from "./components/navBar";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 import "./styles.css";
-import "./app.css"
+import "./app.css";
+
 export default function App() {
   return (
     <div className="App">
       <Router>
+        <NavBar active="home" />
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="checkout" element={<Checkout />} />
-          <Route path="success" element={<Success />} />
-          <Route path="cancel" element={<Cancel />} />
+          <Route
+            path="/"
+            element={
+              <>
+                <NavBar active="home" />
+                <Home />
+              </>
+            }
+          />
+          <Route
+            path="checkout"
+            element={
+              <>
+                <NavBar />
+                <Checkout />
+              </>
+            }
+          />
+          <Route
+            path="success"
+            element={
+              <>
+                <NavBar />
+                <Success />
+              </>
+            }
+          />
+          <Route
+            path="cancel"
+            element={
+              <>
+                <NavBar />
+                <Cancel />
+              </>
+            }
+          />
+          <Route
+            path="about"
+            element={
+              <>
+                <NavBar active="about" />
+                <About />
+              </>
+            }
+          />
+          <Route
+            path="contact"
+            element={
+              <>
+                <NavBar active="contact" />
+                <Contact />
+              </>
+            }
+          />
         </Routes>
       </Router>
     </div>

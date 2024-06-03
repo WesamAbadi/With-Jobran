@@ -23,7 +23,7 @@ body {
 .checkout-title {
   font-size: 24px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin: 70px 0 20px 0;
   text-align: center;
   color: #6b5de9;
 }
@@ -155,6 +155,7 @@ input[type="email"] {
   font-style: normal;
   font-weight: normal;
   font-size: 17px;
+  font-family: "Aref Ruqaa";
   line-height: 130%;
   margin: 0;
   color: rgba(0, 0, 0, 1);
