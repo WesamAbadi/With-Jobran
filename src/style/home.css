@@ -117,6 +117,12 @@
   .all-projects-project {
     width: calc(100% / 2);
   }
+  .homepage-logo-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-top: 70px;
+}
 }
 
 @media (max-width: 1024px) {
@@ -150,8 +156,8 @@
   }
 
   .homepage-image-container {
-    padding-top: 50px;
-    padding-bottom: 50px;
+    padding-top: 10px;
+    /* padding-bottom: 50px; */
     margin-left: 10px;
     order: 1;
   }

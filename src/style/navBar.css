@@ -28,21 +28,23 @@
 
 .nav-list {
 	display: flex;
+	flex-direction: row-reverse;
 	justify-content: space-between;
 	list-style: none;
 	align-items: center;
 	margin-left: -16px;
 	margin-right: 20px;
-	margin-top: 11px;
+	margin-top: 0px;
 }
 
 .nav-item {
 	font-weight: bold;
-	font-size: 80%;
+	font-size: 25px;
 }
 
+
 .nav-item.active a {
-	color: var(--link-color) !important;
+	color: lightcoral !important;
 }
 
 .nav-item a {
@@ -51,7 +53,7 @@
 }
 
 .nav-item a:hover {
-	color: var(--link-color);
+	color: lightcoral;
 	transition: color 0.3s ease-in-out;
 }
 
@@ -64,7 +66,7 @@
 	}
 
 	.nav-background {
-		width: 80%;
+		/* width: 80%; */
 		height: 40px;
 	}
 
