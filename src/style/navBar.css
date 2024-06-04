@@ -1,76 +1,72 @@
-/* @import "../../../data/styles.css"; */
-
 .nav-container {
-	margin: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .navbar {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	position: fixed;
-	top: 3vh;
-	z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 3vh;
+  z-index: 999;
 }
 
 .nav-background {
-	width: 380px;
-	height: 40px;
-	padding-left: 0%;
-	padding-right: 0%;
-	background: #fff;
-	box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-	border-radius: 40px;
+  width: 380px;
+  height: 40px;
+  padding-left: 0%;
+  padding-right: 0%;
+  background: #fff;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
 }
 
 .nav-list {
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-between;
-	list-style: none;
-	align-items: center;
-	margin-left: -16px;
-	margin-right: 20px;
-	margin-top: 0px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  list-style: none;
+  align-items: center;
+  margin-left: -16px;
+  margin-right: 20px;
+  margin-top: 0px;
 }
 
 .nav-item {
-	font-weight: bold;
-	font-size: 25px;
+  font-weight: bold;
+  font-size: 25px;
 }
 
-
 .nav-item.active a {
-	color: lightcoral !important;
+  color: lightcoral !important;
 }
 
 .nav-item a {
-	text-decoration: none;
-	color: var(--primary-color);
+  color: black;
+  text-decoration: none;
 }
 
 .nav-item a:hover {
-	color: lightcoral;
-	transition: color 0.3s ease-in-out;
+  color: lightcoral;
+  transition: color 0.3s ease-in-out;
 }
 
 @media (max-width: 600px) {
-	.navbar {
-		margin-left: 25%;
-		margin-right: 25%;
-		width: 80%;
-		font-size: 80%;
-	}
+  .navbar {
+    margin-left: 25%;
+    margin-right: 25%;
+    width: 80%;
+    font-size: 80%;
+  }
 
-	.nav-background {
-		/* width: 80%; */
-		height: 40px;
-	}
+  .nav-background {
+    height: 40px;
+  }
 
-	.nav-item {
-		font-weight: bold;
-	}
+  .nav-item {
+    font-weight: bold;
+  }
 }

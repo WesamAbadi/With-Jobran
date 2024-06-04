@@ -35,8 +35,6 @@
 }
 
 .project-title {
-  font-family: var(--secondary-font);
-  color: var(--primary-color);
   font-size: 25px;
   padding-top: 15px;
   margin-bottom: 1em;
@@ -44,13 +42,13 @@
 }
 
 .project-description {
-  color: var(--secondary-color);
+  /* color: var(--secondary-color); */
 }
 
 .project-link {
   display: flex;
   align-items: center;
-  color: var(--secondary-color);
+  /* color: var(--secondary-color); */
   font-size: 23px;
   padding-top: 20px;
 }

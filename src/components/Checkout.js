@@ -4,8 +4,6 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../utils/config";
 import CardIcon from "../images/credit-card.svg";
 import ProductImage from "../images/product-image.png";
-import "../styles.css";
-
 let stripePromise;
 const getStripe = () => {
   if (!stripePromise) {
@@ -79,48 +77,54 @@ const Checkout = () => {
   if (stripeError) alert(stripeError);
 
   return (
-    <div className="checkout">
-      <p className="checkout-title">تعليق صوتي إحترافي</p>
-      <p className="checkout-description">إحصل على نصك الخاص</p>
-      <h1 className="checkout-price">$9.99</h1>
-      <img
-        className="checkout-product-image"
-        src={ProductImage}
-        alt="Product"
-      />
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="email">
-          البريد الالكتروني (سيتم إرسال الملف الصوتى الى هذا العنوان)
-        </label>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="البريد الالكتروني"
-          style={{ width: "100%", marginBottom: "1rem" }}
+    <div className="page-content">
+      <div className="checkout content-wrapper">
+        <p className="checkout-title">تعليق صوتي إحترافي</p>
+        <p className="checkout-description">إحصل على نصك الخاص</p>
+        <h1 className="checkout-price">$9.99</h1>
+        <img
+          className="checkout-product-image"
+          src={ProductImage}
+          alt="Product"
         />
-        <label htmlFor="script">
-          ضع رابط النص أو أدخل النص الخاص بك كاملاً
-        </label>
-        <textarea
-          value={script}
-          onChange={(e) => setScript(e.target.value)}
-          placeholder=" ضع رابط النص أو أدخل النص الخاص بك كاملاً"
-          rows={4}
-          style={{ width: "100%", marginBottom: "1rem" }}
-        />
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="email">
+            البريد الالكتروني (سيتم إرسال الملف الصوتى الى هذا العنوان)
+          </label>
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="البريد الالكتروني"
+            style={{ width: "100%", marginBottom: "1rem" }}
+          />
+          <label htmlFor="script">
+            ضع رابط النص أو أدخل النص الخاص بك كاملاً
+          </label>
+          <textarea
+            value={script}
+            onChange={(e) => setScript(e.target.value)}
+            placeholder=" ضع رابط النص أو أدخل النص الخاص بك كاملاً"
+            rows={4}
+            style={{ width: "100%", marginBottom: "1rem" }}
+          />
 
-        <button className="checkout-button" type="submit" disabled={isLoading}>
-          <div className="grey-circle">
-            <div className="purple-circle">
-              <img className="icon" src={CardIcon} alt="credit-card-icon" />
+          <button
+            className="checkout-button"
+            type="submit"
+            disabled={isLoading}
+          >
+            <div className="grey-circle">
+              <div className="purple-circle">
+                <img className="icon" src={CardIcon} alt="credit-card-icon" />
+              </div>
             </div>
-          </div>
-          <div className="text-container">
-            <p className="text">{isLoading ? "Loading..." : "إلى الدفع"}</p>
-          </div>
-        </button>
-      </form>
+            <div className="text-container">
+              <p className="text">{isLoading ? "Loading..." : "إلى الدفع"}</p>
+            </div>
+          </button>
+        </form>
+      </div>
     </div>
   );
 };
