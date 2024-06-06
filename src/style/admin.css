@@ -42,7 +42,9 @@
 .orders-table td {
   color: #333;
 }
-
+.nav-container {
+display: none;
+}
 @media (max-width: 768px) {
   .orders-table {
     border: 0;
