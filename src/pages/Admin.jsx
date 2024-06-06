@@ -5,10 +5,9 @@ import { db } from "../utils/config";
 import "../style/admin.css";
 const Admin = () => {
   const [orders, setOrders] = useState([]);
-  const [pass, setPass] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const correctPassword = "203030";
+  const correctPassword = process.env.REACT_APP_ADMIN_PIN;
 
   const handlePasswordSubmit = (password) => {
     console.log(password);
