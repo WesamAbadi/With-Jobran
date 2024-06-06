@@ -6,14 +6,11 @@ import "../style/admin.css";
 const Admin = () => {
   const [orders, setOrders] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  const correctPassword = process.env.REACT_APP_ADMIN_PIN;
+  const [pin, setPin] = useState(0);
 
   const handlePasswordSubmit = (password) => {
-    console.log(password);
-    if (password === correctPassword) {
+    if (parseInt(password, 10) === pin) {
       setIsAuthenticated(true);
-
       getOrders();
     } else {
       console.log("Incorrect password. Please try again.");
@@ -29,9 +26,18 @@ const Admin = () => {
     setOrders(docs);
     console.log(docs);
   };
+  const getPin = async () => {
+    const querySnapshot = await getDocs(collection(db, "pin"));
+    const docs = [];
+    querySnapshot.forEach((doc) => {
+      docs.push({ ...doc.data(), id: doc.id });
+    });
+    setPin(docs[0].pin);
+  };
 
   useEffect(() => {
     console.log("Component loaded");
+    getPin();
   }, []);
 
   if (!isAuthenticated) {
