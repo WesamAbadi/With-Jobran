@@ -14,7 +14,6 @@ const getStripe = () => {
 };
 
 const Checkout = () => {
-  const [stripeError, setStripeError] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const [script, setScript] = useState("");
   const [email, setEmail] = useState("");
@@ -24,12 +23,10 @@ const Checkout = () => {
     quantity: 1,
   };
 
-  const redirectToCheckout = async (checkoutOptions) => {
-    setLoading(true);
+  const handleCheckout = async (checkoutOptions) => {
     const stripe = await getStripe();
     const { error } = await stripe.redirectToCheckout(checkoutOptions);
-    if (error) setStripeError(error.message);
-    setLoading(false);
+    return error;
   };
 
   const handleSubmit = async (e) => {
@@ -49,16 +46,14 @@ const Checkout = () => {
         paymentStatus: "initial/unknown",
       });
 
-      const docId = docRef.id;
-
       const checkoutOptions = {
         lineItems: [item],
         mode: "payment",
-        successUrl: `${window.location.origin}/success?docId=${docId}`,
-        cancelUrl: `${window.location.origin}/cancel?docId=${docId}`,
+        successUrl: `${window.location.origin}/success?docId=${docRef.id}`,
+        cancelUrl: `${window.location.origin}/cancel?docId=${docRef.id}`,
       };
 
-      await redirectToCheckout(checkoutOptions);
+      await handleCheckout(checkoutOptions);
     } catch (err) {
       console.error("Error submitting script and email:", err);
       alert("Error submitting script and email. Please try again.");
@@ -66,8 +61,6 @@ const Checkout = () => {
       setLoading(false);
     }
   };
-
-  if (stripeError) alert(stripeError);
 
   return (
     <div className="page-content">
