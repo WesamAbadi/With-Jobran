@@ -2,8 +2,7 @@
 
 body {
   margin: 0;
-
-  font-family: "Aref Ruqaa", serif;
+  font-family: "Aref Ruqaa", serif !important;
   background-color: #f7f7f7;
   color: #333;
   text-align: right;

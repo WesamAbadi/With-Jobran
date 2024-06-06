@@ -1,17 +1,20 @@
 import { useState, useEffect } from "react";
 import { getDocs, collection } from "firebase/firestore";
+import { PinInput, PinInputField, HStack } from "@chakra-ui/react";
 import { db } from "../utils/config";
 import "../style/admin.css";
-
 const Admin = () => {
   const [orders, setOrders] = useState([]);
+  const [pass, setPass] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-  const correctPassword = "root";
+  const correctPassword = "203030";
 
   const handlePasswordSubmit = (password) => {
+    console.log(password);
     if (password === correctPassword) {
       setIsAuthenticated(true);
+
       getOrders();
     } else {
       console.log("Incorrect password. Please try again.");
@@ -35,15 +38,18 @@ const Admin = () => {
   if (!isAuthenticated) {
     return (
       <div className="page-content admin-container">
-        <div className="password-container content-wrapper">
-          <input
-            className="input input-bordered w-full max-w-xs"
-            type="password"
-            onChange={(e) => {
-              handlePasswordSubmit(e.target.value);
-            }}
-            placeholder="Enter password"
-          />
+        <div className="password-container">
+          <p>Enter PIN</p>
+          <HStack>
+            <PinInput onChange={handlePasswordSubmit}>
+              <PinInputField />
+              <PinInputField />
+              <PinInputField />
+              <PinInputField />
+              <PinInputField />
+              <PinInputField />
+            </PinInput>
+          </HStack>
         </div>
       </div>
     );

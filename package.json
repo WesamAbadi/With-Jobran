@@ -5,12 +5,16 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@stripe/stripe-js": "1.21.2",
     "firebase": "^10.12.2",
+    "framer-motion": "^11.2.10",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-router-dom": "6.0.2",
-    "react-scripts": "^4.0.0"
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@babel/runtime": "7.13.8",

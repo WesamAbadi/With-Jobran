@@ -1,5 +1,6 @@
 import "@stripe/stripe-js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
 
 import Checkout from "./pages/Checkout";
 import Home from "./pages/Home";
@@ -14,22 +15,23 @@ import "./styles.css";
 import "./app.css";
 import "./style/home.css";
 
-
 export default function App() {
   return (
-    <div className="App">
-      <Router>
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="checkout" element={<Checkout />} />
-          <Route path="success" element={<Success />} />
-          <Route path="cancel" element={<Cancel />} />
-          <Route path="about" element={<About />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="admin" element={<Admin />} />
-        </Routes>
-      </Router>
-    </div>
+    <ChakraProvider>
+      <div className="App">
+        <Router>
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="checkout" element={<Checkout />} />
+            <Route path="success" element={<Success />} />
+            <Route path="cancel" element={<Cancel />} />
+            <Route path="about" element={<About />} />
+            <Route path="contact" element={<Contact />} />
+            <Route path="admin" element={<Admin />} />
+          </Routes>
+        </Router>
+      </div>
+    </ChakraProvider>
   );
 }
