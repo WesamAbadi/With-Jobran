@@ -50,6 +50,9 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+.notes p{
+  margin: 0;
+}
 
 /* Form Styles */
 form {

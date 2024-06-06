@@ -1,7 +1,11 @@
 const Contact = () => {
-    return (
-    <div>Contact</div>
-    )
-}
+  return (
+    <div className="page-content">
+      <div className="content-wrapper">
+        <p>Contact page</p>
+      </div>
+    </div>
+  );
+};
 
-export default Contact
+export default Contact;

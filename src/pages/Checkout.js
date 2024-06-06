@@ -58,7 +58,6 @@ const Checkout = () => {
         paymentStatus: "initial/unknown",
       });
 
-      // Redirect to Stripe checkout
       const stripe = await getStripe();
       const { error } = await stripe.redirectToCheckout(checkoutOptions);
       if (error) {
@@ -88,9 +87,11 @@ const Checkout = () => {
           alt="Product"
         />
         <form onSubmit={handleSubmit}>
-          <label htmlFor="email">
-            البريد الالكتروني (سيتم إرسال الملف الصوتى الى هذا العنوان)
-          </label>
+          <label htmlFor="email"> البريد الالكتروني</label>
+          <div className="notes">
+            <p>** تأكد من إدخال نفس البريد المستخدم في خطوة الدفع التالية</p>
+            <p>** سيتم إرسال الملف الصوتى الى هذا العنوان</p>
+          </div>
           <input
             type="email"
             value={email}

@@ -1,8 +1,8 @@
 import "@stripe/stripe-js";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Checkout from "./components/Checkout";
-import Home from "./components/Home";
+import Checkout from "./pages/Checkout";
+import Home from "./pages/Home";
 import Success from "./components/Success";
 import Cancel from "./components/Cancel";
 import NavBar from "./components/navBar";

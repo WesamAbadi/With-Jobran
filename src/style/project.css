@@ -41,10 +41,6 @@
   font-weight: 700;
 }
 
-.project-description {
-  /* color: var(--secondary-color); */
-}
-
 .project-link {
   display: flex;
   align-items: center;
