@@ -18,6 +18,7 @@
 }
 
 .page-content {
+  padding-top: 3rem;
   background-color: white;
   position: relative;
 }

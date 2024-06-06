@@ -1,0 +1,87 @@
+/* Admin.css */
+.admin-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+}
+
+.no-orders {
+  text-align: center;
+  color: #555;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+.orders-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.orders-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.orders-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.orders-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.orders-table td {
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .orders-table {
+    border: 0;
+  }
+
+  .orders-table caption {
+    font-size: 1.3em;
+  }
+
+  .orders-table thead {
+    display: none;
+  }
+
+  .orders-table tr {
+    border: solid 1px red;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  .orders-table td {
+    display: block;
+    text-align: right;
+    font-size: 0.8em;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  .orders-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .orders-table tr:nth-child(even) {
+    background-color: transparent;
+  }
+}
