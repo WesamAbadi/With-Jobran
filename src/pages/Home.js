@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 
 import Project from "../components/Project";
 import logo from "../assets/images/product-image.png";
@@ -33,8 +34,27 @@ const Homepage = () => {
   };
 
   return (
-    <React.Fragment>
-      <div className="page-content">
+    <>
+      <Helmet>
+        <title>Home Page - With Jobran</title>
+        <meta
+          name="description"
+          content="Welcome to the home page of With Jobran."
+        />
+        <meta name="keywords" content="home, my website, with jobran" />
+        <script type="application/ld+json">
+          {`
+            {
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "With Jobran",
+              "url": "https://with-jobran.web.app",
+              "logo": "https://with-jobran.web.app/logo.png"
+            }
+          `}
+        </script>
+      </Helmet>
+      <main className="page-content">
         <div className="content-wrapper">
           <div className="homepage-logo-container"></div>
 
@@ -47,7 +67,11 @@ const Homepage = () => {
               <div className="homepage-first-area-right-side">
                 <div className="homepage-image-container">
                   <div className="homepage-image-wrapper">
-                    <img src={logo} alt="about" className="homepage-image" />
+                    <img
+                      src={logo}
+                      alt="About With Jobran"
+                      className="homepage-image"
+                    />
                   </div>
                 </div>
               </div>
@@ -69,8 +93,8 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-      </div>
-    </React.Fragment>
+      </main>
+    </>
   );
 };
 
