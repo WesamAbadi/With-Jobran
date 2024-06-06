@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../utils/config";
-import "../style/cancel.css";
+import "../assets/styles/cancel.css";
 
 const useQuery = () => {
   return new URLSearchParams(useLocation().search);

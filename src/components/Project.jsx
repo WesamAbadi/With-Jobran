@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "../style/project.css";
+import "../assets/styles/project.css";
 
 const Project = (props) => {
   const { logo, title, description, linkText, link } = props;

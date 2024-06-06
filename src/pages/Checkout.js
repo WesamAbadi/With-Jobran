@@ -2,8 +2,8 @@ import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../utils/config";
-import CardIcon from "../images/credit-card.svg";
-import ProductImage from "../images/product-image.png";
+import CardIcon from "../assets/images/credit-card.svg";
+import ProductImage from "../assets/images/product-image.png";
 
 let stripePromise;
 const getStripe = () => {

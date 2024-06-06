@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { getDocs, collection } from "firebase/firestore";
 import { PinInput, PinInputField, HStack } from "@chakra-ui/react";
 import { db } from "../utils/config";
-import "../style/admin.css";
+import "../assets/styles/admin.css";
 const Admin = () => {
   const [orders, setOrders] = useState([]);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
