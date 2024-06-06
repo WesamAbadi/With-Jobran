@@ -8,6 +8,7 @@ import Cancel from "./components/Cancel";
 import NavBar from "./components/navBar";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Admin from "./pages/Admin";
 
 import "./styles.css";
 import "./app.css";
@@ -26,6 +27,7 @@ export default function App() {
           <Route path="cancel" element={<Cancel />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="admin" element={<Admin />} />
         </Routes>
       </Router>
     </div>

@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+
 import { db } from "../utils/config";
 import CardIcon from "../images/credit-card.svg";
 import ProductImage from "../images/product-image.png";
+
 let stripePromise;
 const getStripe = () => {
   if (!stripePromise) {
@@ -23,19 +25,10 @@ const Checkout = () => {
     quantity: 1,
   };
 
-  const checkoutOptions = {
-    lineItems: [item],
-    mode: "payment",
-    successUrl: `${window.location.origin}/success`,
-    cancelUrl: `${window.location.origin}/cancel`,
-  };
-
-  const redirectToCheckout = async () => {
+  const redirectToCheckout = async (checkoutOptions) => {
     setLoading(true);
-    console.log("redirectToCheckout");
     const stripe = await getStripe();
     const { error } = await stripe.redirectToCheckout(checkoutOptions);
-    console.log("Stripe checkout error", error);
     if (error) setStripeError(error.message);
     setLoading(false);
   };
@@ -50,21 +43,23 @@ const Checkout = () => {
     setLoading(true);
 
     try {
-      // Save script and email to Firebase
-      await addDoc(collection(db, "voiceovers"), {
+      const docRef = await addDoc(collection(db, "voiceovers"), {
         script,
         email,
         createdAt: serverTimestamp(),
         paymentStatus: "initial/unknown",
       });
 
-      const stripe = await getStripe();
-      const { error } = await stripe.redirectToCheckout(checkoutOptions);
-      if (error) {
-        setStripeError(error.message);
-      } else {
-        alert("Payment and script submission successful!");
-      }
+      const docId = docRef.id;
+
+      const checkoutOptions = {
+        lineItems: [item],
+        mode: "payment",
+        successUrl: `${window.location.origin}/success?docId=${docId}`,
+        cancelUrl: `${window.location.origin}/cancel?docId=${docId}`,
+      };
+
+      await redirectToCheckout(checkoutOptions);
     } catch (err) {
       console.error("Error submitting script and email:", err);
       alert("Error submitting script and email. Please try again.");
