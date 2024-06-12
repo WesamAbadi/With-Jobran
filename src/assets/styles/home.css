@@ -40,7 +40,7 @@
 .homepage-image-container {
   /* width: 370px;
   height: 370px; */
-  width: 300px;
+  width: 250px;
   /* height: 310px; */
 }
 
@@ -123,11 +123,11 @@
 }
 
 @media (max-width: 600px) {
-  .all-projects-container {
+  /* .all-projects-container {
     display: block;
-  }
+  } */
   .all-projects-project {
-    width: calc(100%);
+    width: calc(100%/2);
   }
   .homepage-logo-container {
     display: none;

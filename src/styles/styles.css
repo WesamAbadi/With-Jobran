@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap");
-
+html {
+  background-color: #121416;
+}
 body {
   margin: 0;
   font-family: "Aref Ruqaa", serif !important;

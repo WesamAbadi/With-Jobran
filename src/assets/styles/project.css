@@ -54,7 +54,8 @@
 }
 
 .project-link {
-  display: flex;
+  /* display: flex; */
+  display: none;
   align-items: center;
   /* color: var(--secondary-color); */
   font-size: 23px;
@@ -74,5 +75,8 @@
 @media (max-width: 600px) {
   .project {
     height: 300px;
+  }
+  .project-container {
+    padding: 5px;
   }
 }

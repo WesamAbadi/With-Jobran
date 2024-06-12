@@ -35,9 +35,9 @@ export default function App() {
                 <Route path="contact" element={<Contact />} />
                 <Route path="admin" element={<Admin />} />
               </Routes>
-              <footer>
+              {/* <footer>
                 <p>&copy; 2024 My Website</p>
-              </footer>
+              </footer> */}
             </Suspense>
           </Router>
         </div>
