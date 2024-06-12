@@ -24,7 +24,7 @@ export default function App() {
           <Router>
             <Suspense fallback={<div>Loading...</div>}>
               <header>
-                <NavBar />
+                {/* <NavBar /> */}
               </header>
               <Routes>
                 <Route path="/" element={<Home />} />

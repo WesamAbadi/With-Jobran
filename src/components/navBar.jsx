@@ -13,9 +13,9 @@ const NavBar = () => {
           <div className="nav-background">
             <ul className="nav-list">
               <li className={active === "/" ? "nav-item active" : "nav-item"}>
-                <Link to="/">الرئيسية</Link>
+                <Link to="/">مع جبران</Link>
               </li>
-              <li
+              {/* <li
                 className={active === "/about" ? "nav-item active" : "nav-item"}
               >
                 <Link to="/about">من نحن</Link>
@@ -26,7 +26,7 @@ const NavBar = () => {
                 }
               >
                 <Link to="/contact">تواصل معنا</Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </nav>

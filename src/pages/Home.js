@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 import Project from "../components/Project";
-import logo from "../assets/images/product-image.png";
+import logo from "../assets/images/jobran-pic.jpeg";
 
 import "../assets/styles/home.css";
 
@@ -10,24 +10,18 @@ const Homepage = () => {
   const INFO = {
     projects: [
       {
-        title: "إهداءات صوتية",
-        description: "إهداءات صوتية لمن تحب",
+        title: "اهداء صوتي فقط",
+        description: "رسالة صوتية مخصصة تُسجل بجودة احترافية",
         logo: "https://freepngtransparent.com/wp-content/uploads/2023/03/Microphone-Png-171.png",
-        linkText: "إطلب",
+        linkText: "ب10 دولار فقط ",
         link: "/checkout",
       },
       {
-        title: "ألحان مخصصة",
-        description: "ألحان موسيقية مخصصة",
-        logo: "https://freepngtransparent.com/wp-content/uploads/2023/03/Microphone-Png-171.png",
-        linkText: "إطلب",
-        link: "/checkout",
-      },
-      {
-        title: "قصائد شعرية",
-        description: "قصائد شعرية مكتوبة خصيصاً",
-        logo: "https://freepngtransparent.com/wp-content/uploads/2023/03/Microphone-Png-171.png",
-        linkText: "إطلب",
+        title: "إهداء صوتي مع فيديو ",
+        description:
+          "هذه الخدمة مثالية لجعل لحظاتك لا تُنسى وأكثر تأثيرًا.اختيار تصميم الفيديو ليناسب المناسبة (عيد ميلاد، زفاف، تخرج، إلخ).",
+        logo: "cam-logo.png",
+        linkText: "ب30 دولار فقط ",
         link: "/checkout",
       },
     ],
@@ -62,6 +56,12 @@ const Homepage = () => {
             <div className="homepage-first-area">
               <div className="homepage-first-area-left-side">
                 <div className="title homepage-title">مع جبران</div>
+                <div className="subtitle homepage-subtitle">
+                  لأن لكل مناسبة قصة تُروى .. الآن يمكنك حجز إهداء صوتي مخصص
+                  لأجمل لحظاتك، سواء كان ذلك عيد ميلاد، زفاف، كتب كتاب، خطوبة،
+                  تخرج، أو حتى رسالة صوتية شخصية. نحن هنا لجعل كل مناسبة أكثر
+                  تميزًا وإضفاء طابع خاص لا يُنسى
+                </div>
               </div>
 
               <div className="homepage-first-area-right-side">
@@ -91,6 +91,7 @@ const Homepage = () => {
                 ))}
               </div>
             </div>
+            <div className="homepage-last-area">مع جبران .. احتفل، وأهدِ، واجعل كل لحظة لا تُنسى</div>
           </div>
         </div>
       </main>
