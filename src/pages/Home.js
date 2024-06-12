@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet-async";
 
 import Project from "../components/Project";
-import logo from "../assets/images/jobran-pic.jpeg";
+import logo from "../assets/images/jobran-pic2.jpeg";
 
 import "../assets/styles/home.css";
 
@@ -14,7 +14,7 @@ const Homepage = () => {
         description: "رسالة صوتية مخصصة تُسجل بجودة احترافية",
         logo: "https://freepngtransparent.com/wp-content/uploads/2023/03/Microphone-Png-171.png",
         linkText: "ب10 دولار فقط ",
-        link: "/checkout",
+        link: "https://buy.stripe.com/28og2p0g34uK8ogeUU",
       },
       {
         title: "إهداء صوتي مع فيديو ",
@@ -22,7 +22,7 @@ const Homepage = () => {
           "هذه الخدمة مثالية لجعل لحظاتك لا تُنسى وأكثر تأثيرًا.اختيار تصميم الفيديو ليناسب المناسبة (عيد ميلاد، زفاف، تخرج، إلخ).",
         logo: "cam-logo.png",
         linkText: "ب30 دولار فقط ",
-        link: "/checkout",
+        link: "https://buy.stripe.com/5kA5nL5An5yO0VO289",
       },
     ],
   };

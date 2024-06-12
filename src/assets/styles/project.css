@@ -10,18 +10,18 @@
   text-decoration: none;
 }
 
-.project:hover {
+.project {
   background: #d3d3d3;
   opacity: 1;
   transition: background-color 0.3s ease-in-out;
 }
 
-.project:hover .project-link {
+.project .project-link {
   color: rgb(202, 102, 102);
   transition: color 0.3s ease-in-out;
 }
-.project:hover .project-title,
-.project:hover .project-description {
+.project .project-title,
+.project .project-description {
   color: black;
   transition: color 0.3s ease-in-out;
 }

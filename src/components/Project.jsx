@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import "../assets/styles/project.css";
 
@@ -9,7 +8,7 @@ const Project = (props) => {
   return (
     <React.Fragment>
       <div className="project">
-        <Link to={link}>
+        <a href={link} target="_blank" rel="noopener noreferrer">
           <div className="project-container">
             <div className="project-logo">
               <img src={logo} alt="with jobran logo" />
@@ -22,7 +21,7 @@ const Project = (props) => {
               <div className="project-link-text">{linkText}</div>
             </div>
           </div>
-        </Link>
+        </a>
       </div>
     </React.Fragment>
   );
