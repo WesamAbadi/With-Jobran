@@ -32,7 +32,7 @@ const Homepage = () => {
         link: "https://buy.stripe.com/8wMcPg5So8UygJW001",
       },
       {
-        title: "خدمة مخصصة",
+        title: "خدمة مخصصة مميزة",
         description:
           "ليس مجرد فيديو.. بل فيلم يحكي مشاعرك إذا كنت تريد شيئًا أكبر من مجرد لحظة",
         logo: "cam-logo.png",

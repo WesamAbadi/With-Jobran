@@ -105,10 +105,11 @@
   padding-bottom: 30px;
   margin-left: -18px;
   margin-right: -18px;
+    width: calc(100%);
 }
 
 .all-projects-project {
-  width: calc(100%);
+  width: calc(100%/2);
   box-sizing: border-box;
   padding: 10px;
   overflow: hidden;
@@ -180,6 +181,8 @@
 
   .homepage-projects {
     flex-basis: auto;
+    display: flex;
+    justify-content: center;
   }
 
   .homepage-articles {
