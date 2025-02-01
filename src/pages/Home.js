@@ -9,20 +9,35 @@ import "../assets/styles/home.css";
 const Homepage = () => {
   const INFO = {
     projects: [
+      // {
+      //   title: "كلمات من القلب ",
+      //   description: "أحيانًا الكلمة الصحيحة تكون أصدق هدية..",
+      //   logo: "https://freepngtransparent.com/wp-content/uploads/2023/03/Microphone-Png-171.png",
+      //   linkText: "ب20 دولار فقط ",
+      //   link: "https://buy.stripe.com/28o7uW1C83Ae8dq003",
+      // },
       {
-        title: "اهداء صوتي فقط",
-        description: "رسالة صوتية مخصصة تُسجل بجودة احترافية",
+        title: "إهداء صـوتي من القلب",
+        description: "لأن المشاعر أحيانًا تحتاج لصوت يعبر عنها",
         logo: "https://freepngtransparent.com/wp-content/uploads/2023/03/Microphone-Png-171.png",
-        linkText: "ب10 دولار فقط ",
-        link: "https://buy.stripe.com/28og2p0g34uK8ogeUU",
+        linkText: "ب30 دولار فقط ",
+        link: "https://buy.stripe.com/00g3eG4Ok6Mq9hu7ss",
       },
       {
         title: "إهداء صوتي مع فيديو ",
         description:
-          "هذه الخدمة مثالية لجعل لحظاتك لا تُنسى وأكثر تأثيرًا.اختيار تصميم الفيديو ليناسب المناسبة (عيد ميلاد، زفاف، تخرج، إلخ).",
+          "هذه الخدمة مثالية لجعل لحظاتك لا تُنسى وأكثر تأثيرًا",
         logo: "cam-logo.png",
-        linkText: "ب30 دولار فقط ",
-        link: "https://buy.stripe.com/5kA5nL5An5yO0VO289",
+        linkText: "ب80 دولار فقط ",
+        link: "https://buy.stripe.com/8wMcPg5So8UygJW001",
+      },
+      {
+        title: "خدمة مخصصة",
+        description:
+          "ليس مجرد فيديو.. بل فيلم يحكي مشاعرك إذا كنت تريد شيئًا أكبر من مجرد لحظة",
+        logo: "cam-logo.png",
+        linkText: "ب200 دولار فقط ",
+        link: "https://buy.stripe.com/bIY3eG80w9YC8dq002",
       },
     ],
   };
@@ -57,7 +72,7 @@ const Homepage = () => {
               <div className="homepage-first-area-left-side">
                 <div className="title homepage-title">مع جبران</div>
                 <div className="subtitle homepage-subtitle">
-                  لأن لكل مناسبة قصة تُروى .. الآن يمكنك حجز إهداء صوتي مخصص
+                  لأن لكل مناسبة قصة تُروى .. الآن يمكنك حجز إهداء مخصص
                   لأجمل لحظاتك، سواء كان ذلك عيد ميلاد، زفاف، كتب كتاب، خطوبة،
                   تخرج، أو حتى رسالة صوتية شخصية. نحن هنا لجعل كل مناسبة أكثر
                   تميزًا وإضفاء طابع خاص لا يُنسى

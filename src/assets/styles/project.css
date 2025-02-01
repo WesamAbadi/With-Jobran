@@ -17,11 +17,13 @@
 }
 
 .project .project-link {
-  color: rgb(202, 102, 102);
+  /* color: rgb(202, 102, 102); */
+  color: rgb(28 132 205);
   transition: color 0.3s ease-in-out;
 }
 .project .project-title,
 .project .project-description {
+  text-align: center;
   color: black;
   transition: color 0.3s ease-in-out;
 }
@@ -55,11 +57,12 @@
 
 .project-link {
   /* display: flex; */
-  display: none;
-  align-items: center;
+  /* display: none; */
+  /* align-items: center; */
   /* color: var(--secondary-color); */
   font-size: 23px;
   padding-top: 20px;
+  text-align: center;
 }
 
 .project-link-icon {
@@ -71,10 +74,33 @@
   padding-left: 20px;
   font-weight: 700;
 }
-
+.cta-btn {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  border-radius: 0.5rem;
+  background-color: var(--primary-color);
+  color: #ff0000;
+  box-shadow: 0px 0px 10px 5px var(--primary-color);
+  transition: background-color 0.3s ease-in-out;
+  text-align: center;
+}
+.cta-btn:hover {
+  background-color: var(--primary-color-dark);
+  box-shadow: 0px 0px 10px 5px var(--primary-color-dark);
+}
+.cta-btn-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 0;
+}
 @media (max-width: 600px) {
   .project {
-    height: 300px;
+    /* height: 300px; */
   }
   .project-container {
     padding: 5px;

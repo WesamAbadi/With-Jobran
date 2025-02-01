@@ -1,6 +1,7 @@
 import React from "react";
 
 import "../assets/styles/project.css";
+import AnimatedButton from "./cta";
 
 const Project = (props) => {
   const { logo, title, description, linkText, link } = props;
@@ -19,6 +20,9 @@ const Project = (props) => {
               <div className="project-link-icon"></div>
 
               <div className="project-link-text">{linkText}</div>
+            </div>
+            <div className="cta-btn-container">
+            <AnimatedButton children="إحجز الآن" />
             </div>
           </div>
         </a>

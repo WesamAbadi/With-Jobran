@@ -108,7 +108,7 @@
 }
 
 .all-projects-project {
-  width: calc(100% / 3);
+  width: calc(100%);
   box-sizing: border-box;
   padding: 10px;
   overflow: hidden;
@@ -123,11 +123,11 @@
 }
 
 @media (max-width: 600px) {
-  /* .all-projects-container {
+  .all-projects-container {
     display: block;
-  } */
+  }
   .all-projects-project {
-    width: calc(100%/2);
+    width: calc(100%);
   }
   .homepage-logo-container {
     display: none;
